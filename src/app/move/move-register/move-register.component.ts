@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ValidateFieldsService } from 'src/app/shared/components/fields/validate-fields.service';
 
 @Component({
   selector: 'app-move-register',
@@ -10,7 +11,9 @@ export class MoveRegisterComponent implements OnInit {
 
   register: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(
+    public validate: ValidateFieldsService,
+    private fb: FormBuilder) { }
 
   get f() {
     return this.register.controls;
@@ -19,13 +22,13 @@ export class MoveRegisterComponent implements OnInit {
   ngOnInit() {
 
     this.register = this.fb.group({
-     titulo: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(256)]],
-     urlFoto: ['', [Validators.minLength(10)]],
-     dtLancamento: ['', [Validators.required]],
-     descricao: [''],
+     title: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(256)]],
+     urlPhotograph: ['', [Validators.minLength(10)]],
+     dtLaunch: ['', [Validators.required]],
+     description: [''],
      note: [0, [Validators.required, Validators.min(0), Validators.max(10)]],
      urkIMDb: ['', [Validators.minLength(10)]],
-     genero: ['',[Validators.required]],
+     genre: ['',[Validators.required]],
 
   });
 

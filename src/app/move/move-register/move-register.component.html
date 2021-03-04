@@ -4,28 +4,29 @@
     <form [formGroup]="register" (ngSubmit)="onSubmit()" (ngReset)="reloadForm()">
       <mat-card-content>
           <mat-form-field class="full-width">
-            <input matInput placeholder="Título*" name="titulo" formControlName="titulo">
-            <mat-error *ngIf="(register.touched || register.dirty) && f.titulo.errors && f.titulo.errors.required">Campo obrigatorio</mat-error>
-            <mat-error *ngIf="(register.touched || register.dirty) && f.titulo.errors && f.titulo.errors.minlength">Necessario no minimo 2 caracteres</mat-error>
-            <mat-error *ngIf="(register.touched || register.dirty) && f.titulo.errors && f.titulo.errors.maxlength">Campo aceita no maixmo 256 caracters</mat-error>
+            <input matInput placeholder="Título*" name="title" formControlName="title">
+            <mat-error *ngIf=" validate.hasErrorValidate(f.title,'required')">Campo obrigatorio</mat-error>
+            <mat-error *ngIf=" validate.hasErrorValidate(f.title,'minlength')">Necessario no minimo 2 caracteres</mat-error>
+            <mat-error *ngIf=" validate.hasErrorValidate(f.title, 'maxlength')">Campo aceita no maixmo 256 caracters</mat-error>
           </mat-form-field>
           <mat-form-field class="full-width">
-            <input matInput placeholder="Link Fotoname" name="urlFoto" formControlName="urlFoto">
+            <input matInput placeholder="Link Fotoname*" name="urlPhotograph" formControlName="urlPhotograph">
+            <mat-error *ngIf="validate.hasErrorValidate(f.urlPhotograph,'minlength') ">Necessario no minimo 10 caracteres</mat-error>
           </mat-form-field>
           <mat-form-field class="full-width">
               <input matInput
-                     readonly
+                     readonlyc
                      [matDatepicker]="picker"
                      placeholder="Data de Lançamento*"
-                     name="dtLancamento"
-                     formControlName="dtLancamento"
+                     name="dtLaunch"
+                     formControlName="dtLaunch"
                      (click)="picker.open()">
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
-              <mat-error *ngIf="(register.touched || register.dirty) && f.dtLancamento.errors && f.dtLancamento.errors.required">Campo obrigatorio</mat-error>
+              <mat-error *ngIf="validate.hasErrorValidate(f.dtLaunch, 'required')">Campo obrigatorio</mat-error>
             </mat-form-field>
           <mat-form-field class="full-width">
-            <textarea matInput placeholder="Descrição" name="descricao" formControlName="descricao"></textarea>
+            <textarea matInput placeholder="Descrição" name="description" formControlName="description"></textarea>
           </mat-form-field>
           <mat-form-field class="full-width">
             <input matInput
@@ -36,23 +37,23 @@
                     placeholder="Nota IMDb*"
                     name="note"
                     formControlName="note">
-                    <mat-error *ngIf="(register.touched || register.dirty) && f.titulo.errors && f.titulo.errors.required">Campo obrigatorio</mat-error>
-                    <mat-error *ngIf="(register.touched || register.dirty) && f.titulo.errors && f.titulo.errors.minlength">Necessario no minimo 2 caracteres</mat-error>
-                    <mat-error *ngIf="(register.touched || register.dirty) && f.titulo.errors && f.titulo.errors.maxlength">Campo aceita no maixmo 256 caracters</mat-error>
+                    <mat-error *ngIf="validate.hasErrorValidate(f.note,'required')">Campo obrigatorio</mat-error>
+                    <mat-error *ngIf="validate.hasErrorValidate(f.note,'maxlength')">Campo aceita no maixmo 256 caracters</mat-error>
+                    <mat-error *ngIf="validate.hasErrorValidate(f.note,'minlength')">Necessario no minimo 2 caracteres</mat-error>
           </mat-form-field>
           <mat-form-field class="full-width">
             <input matInput placeholder="Link IMDb" name="urkIMDb" formControlName="urkIMDb">
-            <mat-error *ngIf="(register.touched || register.dirty) && f.urkIMDb.errors && f.urkIMDb.errors.minlength">Necessario no minimo 10 caracteres</mat-error>
+            <mat-error *ngIf="validate.hasErrorValidate(f.urkIMDb, 'minlength')">Necessario no minimo 10 caracteres</mat-error>
           </mat-form-field>
           <mat-form-field class="full-width">
-            <mat-select placeholder="Gênero*" formControlName="genero">
+            <mat-select placeholder="Gênero*" formControlName="genre">
               <mat-option value="Ação">Açao</mat-option>
               <mat-option value="Aventura">Aventura</mat-option>
               <mat-option value=">Ficção Científica">Ficção Científica</mat-option>
               <mat-option value="Romance">Romance</mat-option>
               <mat-option value="Terror">Terror</mat-option>
             </mat-select>
-            <mat-error *ngIf="(register.touched || register.dirty) && f.genero.errors && f.genero.errors.required">Campo obrigatorio</mat-error>
+            <mat-error *ngIf="validate.hasErrorValidate(f.genre,'required')">Campo obrigatorio</mat-error>
           </mat-form-field>
         </mat-card-content>
         <mat-card-actions>
