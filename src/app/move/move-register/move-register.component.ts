@@ -10,6 +10,7 @@ import { ValidateFieldsService } from 'src/app/shared/components/fields/validate
 export class MoveRegisterComponent implements OnInit {
 
   register: FormGroup;
+  genres: Array<string>;
 
   constructor(
     public validate: ValidateFieldsService,
@@ -31,6 +32,8 @@ export class MoveRegisterComponent implements OnInit {
      genre: ['',[Validators.required]],
 
   });
+
+  this.genres = ['Ação', 'Romance', 'Abventura', 'Terror', 'Ficção científica','Comedia', 'Drama'];
 
 }
 
