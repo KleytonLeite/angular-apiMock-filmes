@@ -6,8 +6,8 @@
               formControlName="description">
     </textarea>
     <mat-error *ngIf=" validate.hasErrorValidate(formControl,'required')">Campo obrigatorio</mat-error>
-    <mat-error *ngIf=" validate.hasErrorValidate(formControl,'minlength')">Necessario no minimo 2 caracteres</mat-error>
-    <mat-error *ngIf=" validate.hasErrorValidate(formControl, 'maxlength')">Campo aceita no maixmo 256 caracters</mat-error>
+    <mat-error *ngIf=" validate.hasErrorValidate(formControl,'minlength')">Necessario no minimo {{validate.lengthValidate(formControl, 'minlength')}}  caracteres</mat-error>
+    <mat-error *ngIf=" validate.hasErrorValidate(formControl, 'maxlength')">Campo aceita no maixmo {{validate.lengthValidate(formControl, 'maxlength')}}  caracters</mat-error>
   </mat-form-field>
 </div>
 
