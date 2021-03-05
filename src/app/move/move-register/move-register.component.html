@@ -3,63 +3,18 @@
   <mat-card class="center width50" >
     <form [formGroup]="register" (ngSubmit)="onSubmit()" (ngReset)="reloadForm()">
       <mat-card-content>
-          <mat-form-field class="full-width">
-            <input matInput placeholder="Título*" name="title" formControlName="title">
-            <mat-error *ngIf=" validate.hasErrorValidate(f.title,'required')">Campo obrigatorio</mat-error>
-            <mat-error *ngIf=" validate.hasErrorValidate(f.title,'minlength')">Necessario no minimo 2 caracteres</mat-error>
-            <mat-error *ngIf=" validate.hasErrorValidate(f.title, 'maxlength')">Campo aceita no maixmo 256 caracters</mat-error>
-          </mat-form-field>
-          <mat-form-field class="full-width">
-            <input matInput placeholder="Link Fotoname*" name="urlPhotograph" formControlName="urlPhotograph">
-            <mat-error *ngIf="validate.hasErrorValidate(f.urlPhotograph,'minlength') ">Necessario no minimo 10 caracteres</mat-error>
-          </mat-form-field>
-          <mat-form-field class="full-width">
-              <input matInput
-                     readonlyc
-                     [matDatepicker]="picker"
-                     placeholder="Data de Lançamento*"
-                     name="dtLaunch"
-                     formControlName="dtLaunch"
-                     (click)="picker.open()">
-              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-              <mat-datepicker #picker></mat-datepicker>
-              <mat-error *ngIf="validate.hasErrorValidate(f.dtLaunch, 'required')">Campo obrigatorio</mat-error>
-            </mat-form-field>
-          <mat-form-field class="full-width">
-            <textarea matInput placeholder="Descrição" name="description" formControlName="description"></textarea>
-          </mat-form-field>
-          <mat-form-field class="full-width">
-            <input matInput
-                    type="number"
-                    min="0"
-                    max="10"
-                    step="0.1"
-                    placeholder="Nota IMDb*"
-                    name="note"
-                    formControlName="note">
-                    <mat-error *ngIf="validate.hasErrorValidate(f.note,'required')">Campo obrigatorio</mat-error>
-                    <mat-error *ngIf="validate.hasErrorValidate(f.note,'maxlength')">Campo aceita no maixmo 256 caracters</mat-error>
-                    <mat-error *ngIf="validate.hasErrorValidate(f.note,'minlength')">Necessario no minimo 2 caracteres</mat-error>
-          </mat-form-field>
-          <mat-form-field class="full-width">
-            <input matInput placeholder="Link IMDb" name="urkIMDb" formControlName="urkIMDb">
-            <mat-error *ngIf="validate.hasErrorValidate(f.urkIMDb, 'minlength')">Necessario no minimo 10 caracteres</mat-error>
-          </mat-form-field>
-          <mat-form-field class="full-width">
-            <mat-select placeholder="Gênero*" formControlName="genre">
-              <mat-option value="Ação">Açao</mat-option>
-              <mat-option value="Aventura">Aventura</mat-option>
-              <mat-option value=">Ficção Científica">Ficção Científica</mat-option>
-              <mat-option value="Romance">Romance</mat-option>
-              <mat-option value="Terror">Terror</mat-option>
-            </mat-select>
-            <mat-error *ngIf="validate.hasErrorValidate(f.genre,'required')">Campo obrigatorio</mat-error>
-          </mat-form-field>
-        </mat-card-content>
+          <app-input-text title="Titulo *" controlName="title" [formGroup]="register"></app-input-text>
+          <app-input-text title="Link Foto" controlName="urlPhotograph" [formGroup]="register"></app-input-text>
+          <app-input-date  title="Data de Lamnçamemto *" controlName="dtLaunch" [formGroup]="register"></app-input-date>
+          <app-input-textarea title="Descrição" controlName="description" [formGroup]="register"></app-input-textarea>
+          <app-input-number title="Nota IMDb *" controlName="note" step="0.1"[formGroup]="register"></app-input-number>
+          <app-input-text title="Link IMDb *" controlName="urkIMDb" [formGroup]="register"></app-input-text>
+          <app-input-select title="Gênero *" controlName="genre" [formGroup]="register"></app-input-select>
         <mat-card-actions>
           <button type="submit" color="accent" mat-raised-button>Salvar</button>
           <button type="reset" color="warn" mat-raised-button>Cancelar</button>
         </mat-card-actions>
+      </mat-card-content>
     </form>
   </mat-card>
 </div>
