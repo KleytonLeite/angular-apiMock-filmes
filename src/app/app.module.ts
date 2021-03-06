@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MoveModule } from './move/move.module';
+import { MovieModule } from './movie/movie.module';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { TopComponent } from './shared/components/top/top.component';
 import { MaterialModule } from './shared/material/material.module';
@@ -24,7 +24,7 @@ import { MaterialModule } from './shared/material/material.module';
     LayoutModule,
     MaterialModule,
     AppRoutingModule,
-    MoveModule
+    MovieModule
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'pt' }],
   bootstrap: [AppComponent]

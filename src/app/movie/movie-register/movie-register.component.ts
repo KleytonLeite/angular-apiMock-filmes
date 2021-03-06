@@ -3,11 +3,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ValidateFieldsService } from 'src/app/shared/components/fields/validate-fields.service';
 
 @Component({
-  selector: 'app-move-register',
-  templateUrl: './move-register.component.html',
-  styleUrls: ['./move-register.component.scss']
+  selector: 'app-movie-register',
+  templateUrl: './movie-register.component.html',
+  styleUrls: ['./movie-register.component.scss']
 })
-export class MoveRegisterComponent implements OnInit {
+export class MovieRegisterComponent implements OnInit {
 
   register: FormGroup;
   genres: Array<string>;

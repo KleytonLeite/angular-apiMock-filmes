@@ -1,37 +1,37 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { MoveListComponent } from './move/move-list/move-list.component';
-import { MoveRegisterComponent } from './move/move-register/move-register.component';
-import { MoveModule } from './move/move.module';
+import { MovieListComponent } from './movie/movie-list/movie-list.component';
+import { MovieRegisterComponent } from './movie/movie-register/movie-register.component';
+import { MovieModule } from './movie/movie.module';
 
 const routes: Routes = [
 
   {
     path: '',
-    redirectTo: 'moves',
+    redirectTo: 'movies',
     pathMatch: 'full'
 },
 {
-  path: 'moves',
+  path: 'movies',
   children: [
     {
       path: '',
-      component: MoveListComponent,
+      component: MovieListComponent,
     },
     {
       path: 'register',
-      component: MoveRegisterComponent,
+      component: MovieRegisterComponent,
       pathMatch: 'full'
     }
   ]
 },
-{ path: '**', redirectTo: 'moves' },
+{ path: '**', redirectTo: 'movies' },
 
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes),
-    MoveModule
+    MovieModule
   ],
   exports: [RouterModule]
 })

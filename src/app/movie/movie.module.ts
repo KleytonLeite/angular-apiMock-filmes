@@ -4,13 +4,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { FieldsModule } from '../shared/components/fields/fields.module';
 import { MaterialModule } from '../shared/material/material.module';
-import { MoveListComponent } from './move-list/move-list.component';
-import { MoveRegisterComponent } from './move-register/move-register.component';
+import { MovieListComponent } from './movie-list/movie-list.component';
+import { MovieRegisterComponent } from './movie-register/movie-register.component';
 
 
 
 @NgModule({
-  declarations: [ MoveListComponent, MoveRegisterComponent],
+  declarations: [ MovieListComponent, MovieRegisterComponent],
   imports: [
     CommonModule,
     MaterialModule,
@@ -19,4 +19,4 @@ import { MoveRegisterComponent } from './move-register/move-register.component';
     FieldsModule
   ]
 })
-export class MoveModule { }
+export class MovieModule { }
