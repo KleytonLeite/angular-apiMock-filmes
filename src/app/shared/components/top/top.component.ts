@@ -11,7 +11,9 @@ export class TopComponent implements OnInit {
 @ViewChild('sidenav', {static: false}) sidenav: MatSidenav;
 
 
-  constructor() { }
+  constructor(
+
+  ) { }
 
   ngOnInit() {
   }
@@ -24,7 +26,6 @@ export class TopComponent implements OnInit {
   closeSideNav() {
     this.sidenav.close();
   }
-
 
 }
 

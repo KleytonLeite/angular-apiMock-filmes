@@ -5,13 +5,14 @@
       <mat-card-content>
           <app-input-text title="Titulo *" controlName="title" [formGroup]="register"></app-input-text>
           <app-input-text title="Link Foto" controlName="urlPhotograph" [formGroup]="register"></app-input-text>
-          <app-input-date  title="Data de Lamnçamemto *" controlName="dtLaunch" [formGroup]="register"></app-input-date>
+          <app-input-date  title="Data de Lançamemto *" controlName="dtLaunch" [formGroup]="register"></app-input-date>
           <app-input-textarea title="Descrição" controlName="description" [formGroup]="register"></app-input-textarea>
           <app-input-number title="Nota IMDb *" controlName="note" step="0.1"[formGroup]="register"></app-input-number>
-          <app-input-text title="Link IMDb *" controlName="urkIMDb" [formGroup]="register"></app-input-text>
+          <app-input-text title="Link IMDb *" controlName="urlIMDb" [formGroup]="register"></app-input-text>
           <app-input-select title="Gênero *" [options]="genres" controlName="genre" [formGroup]="register"></app-input-select>
         <mat-card-actions>
           <button type="submit" color="accent" mat-raised-button>Salvar</button>
+          <button color="accent" mat-raised-button (click)="back()">Voltar</button>
           <button type="reset" color="warn" mat-raised-button>Cancelar</button>
         </mat-card-actions>
       </mat-card-content>

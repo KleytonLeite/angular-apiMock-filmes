@@ -16,7 +16,7 @@ import { MovieRegisterComponent } from './movie-register/movie-register.componen
     MaterialModule,
     ReactiveFormsModule,
     FormsModule,
-    FieldsModule
+    FieldsModule,
   ]
 })
 export class MovieModule { }
