@@ -1,6 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
+import { Alert } from '../../models/alert';
+
 @Component({
   selector: 'app-alert',
   templateUrl: './alert.component.html',
@@ -8,26 +10,31 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 })
 export class AlertComponent implements OnInit {
 
-title = 'Success!';
-description = 'Seu Regitro foi alvo com sucesso!';
-btnSuccess = 'OK!';
-btnCancel ='Cancel';
-corBtn = 'primary';
-possuirBtnFechar = false;
+  alert = {
+  title: 'Success!',
+  description: 'Seu Regitro foi alvo com sucesso!',
+  btnSuccess: 'OK!',
+  btnCancel:'Cancel',
+  corBtnSuccess: 'accent',
+  corBtnCancel: 'warn',
+  possuirBtnFechar: false,
+
+  } as Alert;
 
   constructor(
     public dialogRef: MatDialogRef<AlertComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any
+    @Inject(MAT_DIALOG_DATA) public data: Alert,
   ) { }
 
   ngOnInit(): void {
     if(this.data) {
-      this.title = this.data.title || this.title;
-      this.description = this.data.description || this.description;
-      this.btnSuccess = this.data.btnSuccess || this.btnSuccess;
-      this.btnCancel = this.data.btnCancel || this.btnCancel;
-      this.corBtn = this.data,this.corBtn || this.corBtn;
-      this.possuirBtnFechar = this.data.possuirBtnFechar || this.possuirBtnFechar;
+      this.alert.title = this.data.title || this.alert.title;
+      this.alert.description = this.data.description || this.alert.description;
+      this.alert.btnSuccess = this.data.btnSuccess || this.alert.btnSuccess;
+      this.alert.btnCancel = this.data.btnCancel || this.alert.btnCancel;
+      this.alert.corBtnSuccess = this.data.corBtnSuccess || this.alert.corBtnSuccess;
+      this.alert.corBtnCancel = this.data.corBtnCancel || this.alert.corBtnCancel;
+      this.alert.possuirBtnFechar = this.data.possuirBtnFechar || this.alert.possuirBtnFechar;
     }
   }
 

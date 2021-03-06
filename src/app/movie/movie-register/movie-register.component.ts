@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { MoviesService } from 'src/app/core/movies.service';
 import { AlertComponent } from 'src/app/shared/components/alert/alert.component';
 import { ValidateFieldsService } from 'src/app/shared/components/fields/validate-fields.service';
+import { Alert } from 'src/app/shared/models/alert';
 import { Movie } from 'src/app/shared/models/movie';
 
 @Component({
@@ -66,7 +67,15 @@ back() {
 
 private saveMovie(movie: Movie): void {
   this.moviesService.save(movie).subscribe(() => {
-    const dialogRef = this.dialog.open(AlertComponent);
+    const config = {
+      data: {
+      btnSuccess: 'Ir para a listagem',
+      btnCancel:'Cadastrar novo filme',
+      corBtnCancel:'primary',
+      possuirBtnFechar: true,
+      }  as Alert,
+    }
+    const dialogRef = this.dialog.open(AlertComponent, config);
     },
     () => {
       alert('ERRO AO SALVER!!');
