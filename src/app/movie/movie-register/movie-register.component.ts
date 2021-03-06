@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { MoviesService } from 'src/app/core/movies.service';
+import { AlertComponent } from 'src/app/shared/components/alert/alert.component';
 import { ValidateFieldsService } from 'src/app/shared/components/fields/validate-fields.service';
 import { Movie } from 'src/app/shared/models/movie';
 
@@ -16,8 +18,9 @@ export class MovieRegisterComponent implements OnInit {
   genres: Array<string>;
 
   constructor(
-    private router: Router,
     public validate: ValidateFieldsService,
+    public dialog: MatDialog,
+    private router: Router,
     private fb: FormBuilder,
     private moviesService: MoviesService,
     ) { }
@@ -63,7 +66,7 @@ back() {
 
 private saveMovie(movie: Movie): void {
   this.moviesService.save(movie).subscribe(() => {
-      alert('SUCCESS!!!');
+    const dialogRef = this.dialog.open(AlertComponent);
     },
     () => {
       alert('ERRO AO SALVER!!');

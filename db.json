@@ -99,6 +99,26 @@
       "urlIMDb": "https://www.imdb.com/title/tt2948372/?ref_=hm_fanfav_tt_i_4_pd_fp1",
       "genre": "Aventura",
       "id": 10
+    },
+    {
+      "title": "Avatar",
+      "urlPhotograph": "https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg",
+      "dtLaunch": "2009-12-18T03:00:00.000Z",
+      "description": "A paraplegic Marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
+      "note": 7.8,
+      "urlIMDb": "https://www.imdb.com/title/tt0499549/?ref_=fn_al_tt_2",
+      "genre": "Ação",
+      "id": 11
+    },
+    {
+      "title": "Avatar II",
+      "urlPhotograph": "https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg",
+      "dtLaunch": "2009-12-18T03:00:00.000Z",
+      "description": "A paraplegic Marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
+      "note": 7.8,
+      "urlIMDb": "https://www.imdb.com/title/tt0499549/?ref_=fn_al_tt_2",
+      "genre": "Ação",
+      "id": 12
     }
   ]
 }

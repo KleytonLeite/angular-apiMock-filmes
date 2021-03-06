@@ -11,12 +11,14 @@ import { MovieModule } from './movie/movie.module';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { TopComponent } from './shared/components/top/top.component';
 import { MaterialModule } from './shared/material/material.module';
+import { AlertComponent } from './shared/components/alert/alert.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
-    TopComponent
+    TopComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
