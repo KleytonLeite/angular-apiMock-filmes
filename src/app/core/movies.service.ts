@@ -20,4 +20,8 @@ save(movie: Movie): Observable<Movie> {
   return this.http.post<Movie>(url, movie)
 }
 
+list(): Observable<Movie[]> {
+return this.http.get<Movie[]>(url);
+}
+
 }
