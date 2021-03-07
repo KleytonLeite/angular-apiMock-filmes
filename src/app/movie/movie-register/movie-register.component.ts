@@ -76,9 +76,25 @@ private saveMovie(movie: Movie): void {
       }  as Alert,
     }
     const dialogRef = this.dialog.open(AlertComponent, config);
+    dialogRef.afterClosed().subscribe((option: boolean) => {
+      if(option) {
+        this.router.navigateByUrl('movies');
+      }else {
+        this.reloadForm();
+      }
+
+    })
     },
     () => {
-      alert('ERRO AO SALVER!!');
-    });
+      const config = {
+        data: {
+          title: 'Erro ao salvar o regitro!',
+          description: 'Não foi possivel salvar o seu registro, por favor tentar mais tarde',
+          corBtnSuccess:'warn',
+          btnSuccess: 'Fechar',
+        }  as Alert,
+    };
+      this.dialog.open(AlertComponent, config);
+  });
   }
 }
