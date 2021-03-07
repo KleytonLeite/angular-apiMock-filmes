@@ -9,14 +9,26 @@ import { Movie } from 'src/app/shared/models/movie';
 })
 export class MovieListComponent implements OnInit {
 
-  movies:  Movie[]
+  readonly qtdPage = 4;
+  page = 0;
+  movies:  Movie[] = [];
 
   constructor(
     private moviesService: MoviesService,
   ) { }
 
   ngOnInit(): void {
-    this.moviesService.list().subscribe((movies: Movie[]) => this.movies = movies);
+    this.listMovies();
+  }
+
+  onScroll(){
+    this.listMovies();
+  }
+
+  private listMovies(): void {
+    this.page++;
+    this.moviesService.list(this.page, this.qtdPage)
+      .subscribe((movies: Movie[]) => this.movies.push(...movies));
   }
 
   open() {
