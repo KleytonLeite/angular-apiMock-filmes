@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { MoviesService } from 'src/app/core/movies.service';
 import { Movie } from 'src/app/shared/models/movie';
 
@@ -12,12 +13,22 @@ export class MovieListComponent implements OnInit {
   readonly qtdPage = 4;
   page = 0;
   movies:  Movie[] = [];
+  genres: Array<string>;
+  filterListing: FormGroup;
 
   constructor(
     private moviesService: MoviesService,
+    private fb: FormBuilder,
   ) { }
 
   ngOnInit(): void {
+    this.filterListing = this.fb.group({
+      text: [''],
+      genre: ['']
+    });
+
+    this.genres = ['Ação', 'Romance', 'Aventura', 'Terror', 'Ficção científica','Comedia', 'Drama'];
+
     this.listMovies();
   }
 
