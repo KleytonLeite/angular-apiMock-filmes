@@ -12,6 +12,8 @@ export class MovieListComponent implements OnInit {
 
   readonly qtdPage = 4;
   page = 0;
+  text = '';
+  genre ='';
   movies:  Movie[] = [];
   genres: Array<string>;
   filterListing: FormGroup;
@@ -27,6 +29,14 @@ export class MovieListComponent implements OnInit {
       genre: ['']
     });
 
+    this.filterListing.get('text').valueChanges.subscribe((val: string) => {
+      this.text = val;
+      this.restConsultList();
+    })
+    this.filterListing.get('genre').valueChanges.subscribe((val: string) => {
+      this.genre = val;
+      this.restConsultList();
+    })
     this.genres = ['Ação', 'Romance', 'Aventura', 'Terror', 'Ficção científica','Comedia', 'Drama'];
 
     this.listMovies();
@@ -38,8 +48,14 @@ export class MovieListComponent implements OnInit {
 
   private listMovies(): void {
     this.page++;
-    this.moviesService.list(this.page, this.qtdPage)
+    this.moviesService.list(this.page, this.qtdPage, this.text, this.genre)
       .subscribe((movies: Movie[]) => this.movies.push(...movies));
+  }
+
+  private restConsultList(): void {
+    this.page = 0;
+    this.movies = [];
+    this.listMovies();
   }
 
   open() {

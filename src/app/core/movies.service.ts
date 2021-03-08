@@ -20,10 +20,18 @@ save(movie: Movie): Observable<Movie> {
   return this.http.post<Movie>(url, movie)
 }
 
-list(page: number, qtdPage): Observable<Movie[]> {
+list(page: number, qtdPage: number, text: string, genre: string): Observable<Movie[]> {
   let httpParams = new HttpParams();
   httpParams = httpParams.set('_page', page.toString());
   httpParams = httpParams.set('_limit', qtdPage.toString());
+  httpParams = httpParams.set('_sort', 'id');
+  httpParams = httpParams.set('_order', 'desc');
+  if(text) {
+  httpParams = httpParams.set('q', text);
+  }
+  if(genre) {
+  httpParams = httpParams.set('genre', genre);
+  }
 return this.http.get<Movie[]>(url, {params: httpParams});
 }
 
