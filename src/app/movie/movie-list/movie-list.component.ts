@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MoviesService } from 'src/app/core/movies.service';
+import { ConfigParams } from 'src/app/shared/models/config-params';
 import { Movie } from 'src/app/shared/models/movie';
 
 @Component({
@@ -10,10 +11,11 @@ import { Movie } from 'src/app/shared/models/movie';
 })
 export class MovieListComponent implements OnInit {
 
-  readonly qtdPage = 4;
-  page = 0;
-  text = '';
-  genre ='';
+  config: ConfigParams = {
+    page: 0,
+    limite: 4,
+  };
+
   movies:  Movie[] = [];
   genres: Array<string>;
   filterListing: FormGroup;
@@ -30,11 +32,11 @@ export class MovieListComponent implements OnInit {
     });
 
     this.filterListing.get('text').valueChanges.subscribe((val: string) => {
-      this.text = val;
+      this.config.search = val;
       this.restConsultList();
     })
     this.filterListing.get('genre').valueChanges.subscribe((val: string) => {
-      this.genre = val;
+      this.config.field = {type: 'genre', value: val};
       this.restConsultList();
     })
     this.genres = ['Ação', 'Romance', 'Aventura', 'Terror', 'Ficção científica','Comedia', 'Drama'];
@@ -47,13 +49,13 @@ export class MovieListComponent implements OnInit {
   }
 
   private listMovies(): void {
-    this.page++;
-    this.moviesService.list(this.page, this.qtdPage, this.text, this.genre)
+    this.config.page++;
+    this.moviesService.list(this.config)
       .subscribe((movies: Movie[]) => this.movies.push(...movies));
   }
 
   private restConsultList(): void {
-    this.page = 0;
+    this.config.page = 0;
     this.movies = [];
     this.listMovies();
   }

@@ -1,8 +1,10 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
+import { ConfigParams } from '../shared/models/config-params';
 import { Movie } from '../shared/models/movie';
+import { ConfigParamsService } from './config-params.service';
 
 const url = 'http://localhost:3000/movies/'
 
@@ -14,25 +16,16 @@ export class MoviesService {
 
   constructor(
     private http: HttpClient,
+    private configParamsService: ConfigParamsService
   ) { }
 
 save(movie: Movie): Observable<Movie> {
   return this.http.post<Movie>(url, movie)
 }
 
-list(page: number, qtdPage: number, text: string, genre: string): Observable<Movie[]> {
-  let httpParams = new HttpParams();
-  httpParams = httpParams.set('_page', page.toString());
-  httpParams = httpParams.set('_limit', qtdPage.toString());
-  httpParams = httpParams.set('_sort', 'id');
-  httpParams = httpParams.set('_order', 'desc');
-  if(text) {
-  httpParams = httpParams.set('q', text);
-  }
-  if(genre) {
-  httpParams = httpParams.set('genre', genre);
-  }
-return this.http.get<Movie[]>(url, {params: httpParams});
+list(config: ConfigParams): Observable<Movie[]> {
+  const configParams = this.configParamsService.configureParameters(config)
+return this.http.get<Movie[]>(url, {params:  configParams});
 }
 
 }
