@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { debounceTime } from 'rxjs/operators';
 import { MoviesService } from 'src/app/core/movies.service';
 import { ConfigParams } from 'src/app/shared/models/config-params';
@@ -25,6 +26,7 @@ export class MovieListComponent implements OnInit {
 
   constructor(
     private moviesService: MoviesService,
+    private router: Router,
     private fb: FormBuilder,
   ) { }
 
@@ -49,6 +51,10 @@ export class MovieListComponent implements OnInit {
     this.listMovies();
   }
 
+  open(id: number): void {
+    this.router.navigateByUrl('/movies/' + id);
+  }
+
   onScroll(){
     this.listMovies();
   }
@@ -65,8 +71,5 @@ export class MovieListComponent implements OnInit {
     this.listMovies();
   }
 
-  open() {
-
-  }
 
 }

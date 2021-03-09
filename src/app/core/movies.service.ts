@@ -28,4 +28,8 @@ list(config: ConfigParams): Observable<Movie[]> {
 return this.http.get<Movie[]>(url, {params:  configParams});
 }
 
+view(id: number): Observable<Movie> {
+  return this.http.get<Movie>(url + id);
+}
+
 }

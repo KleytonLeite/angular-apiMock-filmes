@@ -1,0 +1,25 @@
+<mat-list *ngIf="movie; else noRegistry">
+  <mat-card class="home-card">
+    <mat-list-item> Titulo: {{movie.title | uppercase}}</mat-list-item>
+    <mat-list-item> Data de Lançamento: {{movie.dtLaunch | date: 'dd/MM/yyyy'}}</mat-list-item>
+    <mat-list-item> Gênero: {{movie.genre}}</mat-list-item>
+    <mat-list-item> Descrição: {{movie.description}}</mat-list-item>
+    <mat-list-item> Nota: <a [href]="movie.urlIMDb" target="_blank"> {{movie.note}}</a></mat-list-item>
+    <img mat-card-image [src]="movie.urlPhoto || noPhoto">
+  </mat-card>
+<div class="example-button-row">
+  <div class="example-flex-container">
+    <div class="example-button-container">
+      <button mat-fab color="primary" (click)="back()" aria-label="Example icon button with a home icon">
+        <mat-icon class="color">home</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>
+</mat-list>
+
+
+
+<ng-template #noRegistry>
+  <h1 class="full-width main-div">Nenhum Registro Encontrado!</h1>
+</ng-template>

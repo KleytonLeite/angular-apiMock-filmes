@@ -7,11 +7,12 @@ import { FieldsModule } from '../shared/components/fields/fields.module';
 import { MaterialModule } from '../shared/material/material.module';
 import { MovieListComponent } from './movie-list/movie-list.component';
 import { MovieRegisterComponent } from './movie-register/movie-register.component';
+import { MovieViewComponent } from './movie-view/movie-view.component';
 
 
 
 @NgModule({
-  declarations: [ MovieListComponent, MovieRegisterComponent],
+  declarations: [ MovieListComponent, MovieRegisterComponent, MovieViewComponent],
   imports: [
     CommonModule,
     MaterialModule,

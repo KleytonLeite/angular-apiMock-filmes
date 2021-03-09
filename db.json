@@ -129,26 +129,6 @@
       "urlIMDb": "https://www.imdb.com/title/tt6902332/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=f9f31d04-fc22-4d12-86b4-f46e25aa2f6f&pf_rd_r=FRVV389AXA44BPXF3PGA&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=boxoffice&ref_=cht_bo_8",
       "genre": "Ação",
       "id": 13
-    },
-    {
-      "title": "teste sem foto",
-      "urlPhoto": "",
-      "dtLaunch": "2021-03-08T03:00:00.000Z",
-      "description": "",
-      "note": 0,
-      "urlIMDb": "",
-      "genre": "Terror",
-      "id": 14
-    },
-    {
-      "title": "teste",
-      "urlPhoto": "",
-      "dtLaunch": "2021-03-08T03:00:00.000Z",
-      "description": "teste1\nteste2\nteste3\nteste4",
-      "note": 0,
-      "urlIMDb": "",
-      "genre": "Terror",
-      "id": 15
     }
   ]
 }

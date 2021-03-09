@@ -1,0 +1,26 @@
+.mat-card-image {
+  width: 182px;
+  height: 268px;
+  margin: auto;
+  display: block;
+}
+
+.example-flex-container {
+  position: absolute;
+  left: 77vw;
+  bottom: 7%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+.color {
+  color: aliceblue;
+}
+
