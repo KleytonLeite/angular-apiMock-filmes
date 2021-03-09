@@ -15,7 +15,8 @@
 }
 
 .mat-card-image {
-  width: auto;
+  width: 182px;
+  height: 268px;
   margin: auto;
   display: block;
 }
@@ -31,12 +32,12 @@
 @media screen and (min-width: 800px) {
   .home-content {
     .home-card {
-      width: calc(33.3333% - 52px);
+      width: calc(33.333% - 52px);
     }
   }
 }
 
-@media screen and (min-width: 1530px) {
+@media screen and (min-width: 1300px) {
     .home-content {
       .home-card {
         width: calc(25% - 52px);

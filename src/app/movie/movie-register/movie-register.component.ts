@@ -34,7 +34,7 @@ export class MovieRegisterComponent implements OnInit {
 
     this.register = this.fb.group({
      title: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(256)]],
-     urlPhotograph: ['', [Validators.minLength(10)]],
+     urlPhoto: ['', [Validators.minLength(10)]],
      dtLaunch: ['', [Validators.required]],
      description: [''],
      note: [0, [Validators.required, Validators.min(0), Validators.max(10)]],

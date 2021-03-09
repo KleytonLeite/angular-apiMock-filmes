@@ -4,7 +4,7 @@
     <form autocomplete="off" novalidate [formGroup]="register" (ngSubmit)="onSubmit()" (ngReset)="reloadForm()">
       <mat-card-content>
           <app-input-text title="Titulo *" controlName="title" [formGroup]="register"></app-input-text>
-          <app-input-text title="Link Foto" controlName="urlPhotograph" [formGroup]="register"></app-input-text>
+          <app-input-text title="Link Foto" controlName="urlPhoto" [formGroup]="register"></app-input-text>
           <app-input-date  title="Data de Lançamemto *" controlName="dtLaunch" [formGroup]="register"></app-input-date>
           <app-input-textarea title="Descrição" controlName="description" [formGroup]="register"></app-input-textarea>
           <app-input-number title="Nota IMDb *" controlName="note" step="0.1"[formGroup]="register"></app-input-number>

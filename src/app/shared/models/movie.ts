@@ -1,7 +1,7 @@
 export interface Movie {
       id?: number;
       title: string;
-      urlPhotograph?: string;
+      urlPhoto?: string;
       dtLaunch: Date;
       description?: string;
       note: number;
