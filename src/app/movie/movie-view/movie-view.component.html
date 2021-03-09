@@ -6,6 +6,10 @@
     <mat-list-item> Descrição: {{movie.description}}</mat-list-item>
     <mat-list-item> Nota: <a [href]="movie.urlIMDb" target="_blank"> {{movie.note}}</a></mat-list-item>
     <img mat-card-image [src]="movie.urlPhoto || noPhoto">
+    <mat-card-actions>
+      <button color="accent" mat-raised-button>Editar</button>
+      <button color="warn" mat-raised-button (click)="delete()">Excluir</button>
+    </mat-card-actions>
   </mat-card>
 <div class="example-button-row">
   <div class="example-flex-container">

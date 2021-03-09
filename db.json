@@ -81,36 +81,6 @@
       "genre": "Comédia"
     },
     {
-      "id": 9,
-      "title": "John Wick 3: Parabellum",
-      "urlPhoto": "https://m.media-amazon.com/images/M/MV5BMDg2YzI0ODctYjliMy00NTU0LTkxODYtYTNkNjQwMzVmOTcxXkEyXkFqcGdeQXVyNjg2NjQwMDQ@._V1_UX182_CR0,0,182,268_AL_.jpg",
-      "dtLaunch": "2019-05-16T03:00:00.000Z",
-      "description": "John Wick is on the run after killing a member of the international assassin's guild, and with a $14 million price tag on his head, he is the target of hit men and women everywhere.",
-      "note": 7.5,
-      "urlIMDb": "https://www.imdb.com/title/tt6146586/",
-      "genre": "Açao"
-    },
-    {
-      "title": "Soul",
-      "urlPhoto": "https://m.media-amazon.com/images/M/MV5BZGE1MDg5M2MtNTkyZS00MTY5LTg1YzUtZTlhZmM1Y2EwNmFmXkEyXkFqcGdeQXVyNjA3OTI0MDc@._V1_UX182_CR0,0,182,268_AL_.jpg",
-      "dtLaunch": "2020-12-25T03:00:00.000Z",
-      "description": "filme de amimaçoa disney",
-      "note": 8.1,
-      "urlIMDb": "https://www.imdb.com/title/tt2948372/?ref_=hm_fanfav_tt_i_4_pd_fp1",
-      "genre": "Aventura",
-      "id": 10
-    },
-    {
-      "title": "Avatar",
-      "urlPhoto": "https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg",
-      "dtLaunch": "2009-12-18T03:00:00.000Z",
-      "description": "A paraplegic Marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
-      "note": 7.8,
-      "urlIMDb": "https://www.imdb.com/title/tt0499549/?ref_=fn_al_tt_2",
-      "genre": "Ação",
-      "id": 11
-    },
-    {
       "title": "The Falcon and the Winter Soldier ",
       "urlPhoto": "https://m.media-amazon.com/images/M/MV5BODNiODVmYjItM2MyMC00ZWQyLTgyMGYtNzJjMmVmZTY2OTJjXkEyXkFqcGdeQXVyNzk3NDUzNTc@._V1_UX182_CR0,0,182,268_AL_.jpg",
       "dtLaunch": "2021-03-19T03:00:00.000Z",
