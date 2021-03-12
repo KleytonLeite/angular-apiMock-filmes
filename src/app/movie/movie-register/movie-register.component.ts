@@ -53,7 +53,12 @@ onSubmit(): void {
     return;
   }
 const movie = this.register.getRawValue() as Movie;
-this.saveMovie(movie);
+  if(this.id) {
+    movie.id = this.id;
+    this.updateMovie(movie);
+  }else {
+    this.saveMovie(movie);
+  }
 }
 
 reloadForm(): void {
@@ -123,4 +128,28 @@ private saveMovie(movie: Movie): void {
       this.dialog.open(AlertComponent, config);
   });
   }
+
+  private updateMovie(movie: Movie): void {
+    this.moviesService.update(movie).subscribe(() => {
+      const config = {
+        data: {
+        description: 'Seu registro Atualizado com sucesso!',
+        btnSuccess: 'Ir para a listagem'
+        }  as Alert,
+      }
+      const dialogRef = this.dialog.open(AlertComponent, config);
+      dialogRef.afterClosed().subscribe(() => this.router.navigateByUrl('movies'));
+      },
+      () => {
+        const config = {
+          data: {
+            title: 'Erro ao atualizar o regitro!',
+            description: 'Não foi possivel atualizar o seu registro, por favor tentar mais tarde',
+            corBtnSuccess:'warn',
+            btnSuccess: 'Fechar',
+          }  as Alert,
+      };
+        this.dialog.open(AlertComponent, config);
+    });
+    }
 }

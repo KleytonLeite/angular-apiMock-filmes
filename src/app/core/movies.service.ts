@@ -23,6 +23,10 @@ save(movie: Movie): Observable<Movie> {
   return this.http.post<Movie>(url, movie)
 }
 
+update(movie: Movie): Observable<Movie> {
+  return this.http.put<Movie>(url + movie.id, movie);
+}
+
 list(config: ConfigParams): Observable<Movie[]> {
   const configParams = this.configParamsService.configureParameters(config)
 return this.http.get<Movie[]>(url, {params:  configParams});

@@ -37,5 +37,4 @@ export class AlertComponent implements OnInit {
       this.alert.possuirBtnFechar = this.data.possuirBtnFechar || this.alert.possuirBtnFechar;
     }
   }
-
 }
