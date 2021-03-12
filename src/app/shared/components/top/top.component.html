@@ -2,9 +2,9 @@
   <mat-sidenav #sidenav class="sidenav" fixedInViewport="true" >
     <mat-toolbar class="menuColor" color="primary">Menu</mat-toolbar>
     <mat-nav-list (click)="closeSideNav()">
-      <a mat-list-item [routerLink]="['/movie/list']">Inicial</a>
+        <a  mat-list-item [routerLink]="['/movie']"><mat-icon class="color padding10">home</mat-icon>Inicial</a>
       <mat-divider></mat-divider>
-      <a mat-list-item [routerLink]="['/movies/register']">Cadastrar novo Filme</a>
+      <a mat-list-item [routerLink]="['/movies/register']"><mat-icon class="color padding10">save_alt</mat-icon>Cadastrar Filme</a>
       <mat-divider></mat-divider>
     </mat-nav-list>
   </mat-sidenav>

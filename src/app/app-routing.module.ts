@@ -21,14 +21,24 @@ const routes: Routes = [
       component: MovieListComponent,
     },
     {
+      path: 'register',
+      children: [
+        {
+          path: '',
+          component: MovieRegisterComponent,
+          pathMatch: 'full'
+        },
+        {
+          path: ':id',
+          component: MovieRegisterComponent,
+          pathMatch: 'full'
+        },
+      ]
+    },
+    {
       path: ':id',
       component: MovieViewComponent,
     },
-    {
-      path: 'register',
-      component: MovieRegisterComponent,
-      pathMatch: 'full'
-    }
   ]
 },
 { path: '**', redirectTo: 'movies' },

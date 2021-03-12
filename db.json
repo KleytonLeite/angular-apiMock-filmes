@@ -99,6 +99,16 @@
       "urlIMDb": "https://www.imdb.com/title/tt6902332/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=f9f31d04-fc22-4d12-86b4-f46e25aa2f6f&pf_rd_r=FRVV389AXA44BPXF3PGA&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=boxoffice&ref_=cht_bo_8",
       "genre": "Ação",
       "id": 13
+    },
+    {
+      "title": "Shazam!",
+      "urlPhoto": "https://m.media-amazon.com/images/M/MV5BYTE0Yjc1NzUtMjFjMC00Y2I3LTg3NGYtNGRlMGJhYThjMTJmXkEyXkFqcGdeQXVyNTI4MzE4MDU@._V1_UX182_CR0,0,182,268_AL_.jpg",
+      "dtLaunch": "2019-04-04T03:00:00.000Z",
+      "description": "A newly fostered young boy in search of his mother instead finds unexpected super powers and soon gains a powerful enemy.",
+      "note": 7.1,
+      "urlIMDb": "https://www.imdb.com/title/tt0448115/",
+      "genre": "Aventura",
+      "id": 14
     }
   ]
 }

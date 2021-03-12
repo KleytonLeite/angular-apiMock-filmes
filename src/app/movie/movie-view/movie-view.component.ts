@@ -19,14 +19,14 @@ export class MovieViewComponent implements OnInit {
 
   constructor(
     public dialog: MatDialog,
-    private activtedRoute: ActivatedRoute,
+    private activatedRoute: ActivatedRoute,
     private moviesService: MoviesService,
     private router: Router,
 
   ) { }
 
   ngOnInit(): void {
-    this.id = this.activtedRoute.snapshot.params['id'];
+    this.id = this.activatedRoute.snapshot.params['id'];
     this.movieView();
   }
 
@@ -34,13 +34,17 @@ export class MovieViewComponent implements OnInit {
     this.router.navigate([`movies`]);
   }
 
+  edit(): void {
+    this.router.navigateByUrl('/movies/register/' + this.id);
+  }
+
   delete() {
     const config = {
       data: {
           title: 'Você tem ceretza que deseja excluir?',
           description: 'Caso você tenha certeza que deseja excluir, clicar no botão OK',
-          corBtnSuccess: 'primary',
-          corBtnCancel: 'warn',
+          corBtnSuccess: 'warn',
+          corBtnCancel: 'primary',
           possuirBtnFechar: true,
       }  as Alert,
     }
